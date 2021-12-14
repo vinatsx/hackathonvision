@@ -2,30 +2,38 @@
 
 
 import cv2 
+import time
 
-cam = cv2.VideoCapture(0)
+timeout_end = 10 #10seconds
+timeout_start = time.time()
+
 
 cv2.namedWindow("test")
 
 # img_counter = 0
 
-while True:
+while time.time() < timeout_start + timeout_end:
+    cam = cv2.VideoCapture(0)
     ret, frame = cam.read()
-    if not ret:
-        print("failed to grab frame")
-        break
-    cv2.imshow("test", frame)
+    cam.release()
+    fileloc = "./TestImages/test.jpg"
+    cv2.imwrite(fileloc, frame)
+    time.sleep(5) #5s
+    #if not ret:
+        #print("failed to grab frame")
+        #break
+    #cv2.imshow("test", frame)
 
-    k = cv2.waitKey(1)
-    if k%256 == 27:
+    #k = cv2.waitKey(1)
+    #if k%256 == 27:
         # ESC pressed
-        print("Escape hit, closing...")
-        break
-    elif k%256 == 32:
+        #print("Escape hit, closing...")
+        #break
+    #elif k%256 == 32:
         # SPACE pressed
-        img_name = "opencv_frame.png" # Insert name here
-        cv2.imwrite(img_name, frame)
-        print("{} written!".format(img_name))
+        #img_name = "opencv_frame.png" # Insert name here
+        #cv2.imwrite(img_name, frame)
+        #print("{} written!".format(img_name))
         # img_counter += 1
 
 cam.release()
