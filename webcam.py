@@ -3,6 +3,7 @@
 
 import cv2 
 import time
+from analyse import *
 
 timeout_end = 10 #10seconds
 timeout_start = time.time()
@@ -17,8 +18,9 @@ while time.time() < timeout_start + timeout_end:
     ret, frame = cam.read()
     cam.release()
     fileloc = "./TestImages/test.jpg"
+    counter = analyseimg()
     cv2.imwrite(fileloc, frame)
-    time.sleep(5) #5s
+    time.sleep(2) #2s
     #if not ret:
         #print("failed to grab frame")
         #break
