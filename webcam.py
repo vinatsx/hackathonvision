@@ -9,7 +9,7 @@ timeout_end = 10 #10seconds
 timeout_start = time.time()
 
 
-cv2.namedWindow("test")
+#cv2.namedWindow("test")
 
 # img_counter = 0
 
