@@ -7,9 +7,7 @@ address = vision_service_address + "analyze"
 parameters  = {'visualFeatures':'Objects','language':'en'}
 
 
-IMGNAME = input("input img name: ")
-
-img_path = f"./TestImages/{IMGNAME}.jpg"
+img_path = f"./TestImages/crowd.jpg"
 img_data = open(img_path, 'rb').read()
 
 headers    = {'Content-Type': 'application/octet-stream',
