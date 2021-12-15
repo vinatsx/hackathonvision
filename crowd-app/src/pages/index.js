@@ -11,6 +11,7 @@ const Home = () => {
       }}
     >
       <h1>Crowd Analyser Homepage</h1>
+      
     </div>
   );
 };
