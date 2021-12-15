@@ -1,19 +1,17 @@
 # This is the code to connect to your webcam to take pictures
 
-
 import cv2 
 import time
-from analyse import *
+from backend.analyse import *
 
 timeout_end = 10 #10seconds
 timeout_start = time.time()
 
-
 #cv2.namedWindow("test")
-
 # img_counter = 0
+# while time.time() < timeout_start + timeout_end:
 
-while time.time() < timeout_start + timeout_end:
+def getCrowdCount():
     cam = cv2.VideoCapture(0)
     ret, frame = cam.read()
     cam.release()
@@ -21,6 +19,12 @@ while time.time() < timeout_start + timeout_end:
     cv2.imwrite(fileloc, frame)
     counter = analyseimg()
     time.sleep(2) #2s
+
+    cam.release()
+    cv2.destroyAllWindows()
+
+    return counter
+    
     #if not ret:
         #print("failed to grab frame")
         #break
@@ -37,6 +41,3 @@ while time.time() < timeout_start + timeout_end:
         #cv2.imwrite(img_name, frame)
         #print("{} written!".format(img_name))
         # img_counter += 1
-
-cam.release()
-cv2.destroyAllWindows()
