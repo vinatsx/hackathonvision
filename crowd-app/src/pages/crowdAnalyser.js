@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NewBooking = () => {
+const CrowdAnalyser = () => {
   return (
     <div
       style={{
@@ -15,4 +15,4 @@ const NewBooking = () => {
   );
 };
 
-export default NewBooking;
+export default CrowdAnalyser;

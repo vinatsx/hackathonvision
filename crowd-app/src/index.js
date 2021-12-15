@@ -4,7 +4,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages';
-import NewBooking from './pages/newbookings';
+import CrowdAnalyser from './pages/crowdAnalyser';
 
 function Test() {
     return (
@@ -13,7 +13,7 @@ function Test() {
                 <Navbar />
                     <Routes>
                         <Route path='/'  element={<Home/>} />
-                        <Route path='/checkcrowd' element={<NewBooking/>} />
+                        <Route path='/checkcrowd' element={<CrowdAnalyser/>} />
                     </Routes>
             </Router>
         </>
