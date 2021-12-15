@@ -9,4 +9,8 @@ def index():
 
 @app.route("/crowd", methods=["GET"])
 def crowd():
-    return {"status":"success", "crowdCount": getCrowdCount()}
+    try:
+        crowdCount = getCrowdCount()
+        return {"status":"success", "crowdCount": crowdCount}
+    except:
+        return {"status":"fail", "crowdCount":"error"}
