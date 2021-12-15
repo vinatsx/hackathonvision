@@ -17,7 +17,7 @@ while time.time() < timeout_start + timeout_end:
     cam = cv2.VideoCapture(0)
     ret, frame = cam.read()
     cam.release()
-    fileloc = "./TestImages/test.jpg"
+    fileloc = "./TestImages/crowd.jpg"
     counter = analyseimg()
     cv2.imwrite(fileloc, frame)
     time.sleep(2) #2s
