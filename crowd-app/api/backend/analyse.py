@@ -7,7 +7,7 @@ def analyseimg():
     
     parameters  = {'visualFeatures':'Objects','language':'en'}
 
-    img_path = f"./TestImages/crowd.jpg"
+    img_path = f"./backend/TestImages/crowd.jpg"
     img_data = open(img_path, 'rb').read()
 
     headers    = {'Content-Type': 'application/octet-stream',
