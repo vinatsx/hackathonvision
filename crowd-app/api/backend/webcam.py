@@ -15,7 +15,7 @@ def getCrowdCount():
     cam = cv2.VideoCapture(0)
     ret, frame = cam.read()
     cam.release()
-    fileloc = "./backend/TestImages/crowd.jpg"
+    fileloc = "../src/TestImages/crowd.jpg"
     cv2.imwrite(fileloc, frame)
     counter = analyseimg()
     time.sleep(2) #2s

@@ -10,6 +10,8 @@ const CrowdAnalyser = () => {
         height: '90vh'
       }}
     >
+
+    <img src={ require('../TestImages/crowd.jpg') } />
       <h1>Show Number</h1>
     </div>
   );
