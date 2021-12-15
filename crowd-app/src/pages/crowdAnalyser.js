@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const CrowdAnalyser = () => {
+
+  const [crowdNumber, setCrowdNumber] = useState(0);
+
+  
+  // fetches crowdNumber on page refresh or clicking into 
+  // the Check Crowd button from the home page.
+  // TODO: trigger effect/rerender when navbar button is clicked
+  useEffect(() => {console.log("running");
+    fetch('/crowd').then(res => res.json()).then(data => {
+      setCrowdNumber(data.crowdCount); 
+    });
+  }, []);
+
   return (
     <>
       <div
@@ -12,7 +25,7 @@ const CrowdAnalyser = () => {
           flexDirection: "column",
         }}
       >
-        <img src={require("../TestImages/crowd.jpg")} width={400} />
+        <img src={require("../TestImages/crowd.jpg")} alt="live crowd" width={400} />
         
       </div>
       
@@ -23,8 +36,7 @@ const CrowdAnalyser = () => {
         alignItems: "center",
         flexDirection: "column",
       }}>
-        <h2> Number of people: {} </h2>
-        <h2> Estimated queue time: {} </h2>
+        <h2> Number of people: {crowdNumber} </h2>
       </div>
     </>
   );
