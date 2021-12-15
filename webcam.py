@@ -18,8 +18,8 @@ while time.time() < timeout_start + timeout_end:
     ret, frame = cam.read()
     cam.release()
     fileloc = "./TestImages/crowd.jpg"
-    counter = analyseimg()
     cv2.imwrite(fileloc, frame)
+    counter = analyseimg()
     time.sleep(2) #2s
     #if not ret:
         #print("failed to grab frame")
