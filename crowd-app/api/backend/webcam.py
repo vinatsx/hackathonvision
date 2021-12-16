@@ -18,7 +18,6 @@ def getCrowdCount():
     fileloc = "../src/TestImages/crowd.jpg"
     cv2.imwrite(fileloc, frame)
     counter = analyseimg()
-    time.sleep(2) #2s
 
     cam.release()
     cv2.destroyAllWindows()
