@@ -13,3 +13,5 @@ Requires a Microsoft Azure Computer Vision subscription key.
 Create a ```db.py``` file in the ```crowd-app/api/backend``` directory. 
 
 Include ```SUBSCRIPTION_KEY={insert subscription key here}``` into the ```db.py``` file.
+
+Refer to https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/ for more details on setting up and obtaining an API key.
