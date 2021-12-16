@@ -10,7 +10,7 @@ const Home = () => {
         height: '90vh'
       }}
     >
-      <h1>Crowd Analyser Homepage</h1>
+      <h1>Click on the Check Crowd button for real-time live update!</h1>
       
     </div>
   );
